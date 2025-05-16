@@ -1,34 +1,30 @@
-// Função para abrir o modal
-function openModal(title, description) {
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-description').innerText = description;
-    document.getElementById('modal').style.display = 'block';
-}
+// Seleciona os elementos necessários
+const contactForm = document.getElementById('contact-form');
+const loadingMessage = document.getElementById('loading');
 
-// Função para fechar o modal
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-// Funcionalidade de envio do formulário
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+// Adiciona evento de envio ao formulário
+contactForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Previne o comportamento padrão do formulário
-    document.getElementById('loading').style.display = 'block'; // Mostra o loading
+    loadingMessage.style.display = 'block'; // Mostra a mensagem de loading
 
-    // Simula um envio com setTimeout
+    // Simula um envio com setTimeout()
     setTimeout(() => {
-        document.getElementById('loading').style.display = 'none'; // Esconde o loading
+        loadingMessage.style.display = 'none'; // Esconde a mensagem de loading
         alert('Mensagem enviada com sucesso!'); // Mensagem de sucesso
+        contactForm.reset(); // Limpa o formulário
     }, 2000);
 });
 
-// Suavização de rolagem
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
-    link.addEventListener('click', function(e) {
+// Scroll suave para as seções
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
+
+// Modal dinâmico para projetos (a ser implementado)
+// MODIFIQUE AQUI para adicionar a lógica do modal
