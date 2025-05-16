@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de [SEU_NOME], desenvolvedor web profissional.">
+    <meta name="keywords" content="portfólio, desenvolvimento web, [SEU_NOME]">
+    <title>Portfólio de [SEU_NOME]</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">[SEU_NOME]</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Olá, eu sou [SEU_NOME]</h1>
+            <p>Desenvolvedor web apaixonado por tecnologia e inovação.</p>
+            <a href="#projetos" class="cta">Ver Projetos</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://placehold.co/400x400" alt="Avatar de [SEU_NOME]" class="avatar">
+        </div>
+    </section>
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="grid">
+            <div class="card" onclick="openModal('Projeto 1', 'Descrição do projeto 1')">
+                <img src="https://placehold.co/300x200" alt="Projeto 1">
+                <div class="tags">
+                    <span>React</span>
+                    <span>Python</span>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('Projeto 2', 'Descrição do projeto 2')">
+                <img src="https://placehold.co/300x200" alt="Projeto 2">
+                <div class="tags">
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('Projeto 3', 'Descrição do projeto 3')">
+                <img src="https://placehold.co/300x200" alt="Projeto 3">
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="loading" id="loading" style="display:none;">Enviando...</div>
+    </section>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2023 [SEU_NOME]. Todos os direitos reservados.</p>
+    </footer>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
